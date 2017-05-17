@@ -1,5 +1,5 @@
 function Map(rows, collumns) {
-  this.SIZE = 40;
+  this.SIZE = 32;
   this.enemies = [];
   this.cells = [];
   for (var r = 0; r < rows; r++) {
@@ -34,6 +34,7 @@ Map.prototype.setCells = function (newCells) {
         case 2:
           this.cells[i][j] = 0;
           newEnemy = new Sprite();
+          newEnemy.images = this.images;
           newEnemy.y = (i+0.5)*this.SIZE;
           newEnemy.x = (j+0.5)*this.SIZE;
           this.enemies.push(newEnemy);
